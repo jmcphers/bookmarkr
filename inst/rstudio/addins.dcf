@@ -1,0 +1,4 @@
+Name: Add Bookmark
+Description: Adds a new bookmark on the current line.
+Binding: addBookmark
+Interactive: false
