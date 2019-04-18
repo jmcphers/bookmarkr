@@ -1,3 +1,4 @@
+# Environment to hold the current collection of bookmarks
 .bookmarks <- new.env(parent = emptyenv())
 
 addBookmark <- function() {
@@ -21,6 +22,7 @@ addBookmark <- function() {
     return(NULL)
   }
 
+  # Add this bookmark to our collection
   assign(paste0(basename(ctx$path), "_", line),
     list(
       type = "info",
