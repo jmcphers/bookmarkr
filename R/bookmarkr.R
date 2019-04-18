@@ -18,8 +18,14 @@ addBookmark <- function() {
   # Get a note from the user
   note <- rstudioapi::showPrompt("Add Note", "Enter a note for this line:")
   if (is.null(note) || identical(note, "")) {
-    # No not entered, abort
+    # No note entered, abort
     return(NULL)
+  }
+
+  # If we have no bookmarks in our collection, load our collection of bookmarks
+  # from disk
+  if (length(.bookmarks) == 0) {
+    load_config()
   }
 
   # Add this bookmark to our collection
@@ -32,6 +38,9 @@ addBookmark <- function() {
       message = note
     ),
     envir = .bookmarks)
+
+  # Save the bookmark settings to disk
+  save_config()
 
   # Create the source marker
   rstudioapi::sourceMarkers("BookmarkR",
