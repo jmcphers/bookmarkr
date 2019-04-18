@@ -28,3 +28,9 @@ The add-in does not ship with a keyboard shortcut, but you can assign one so tha
 3. Click the *Shortcut* column in the "Add Bookmark" row
 4. Press your desired shortcut key (note that you can use a key sequence, too!)
 
+### Known issues
+
+- Bookmark line numbers can be incorrect after adding a new bookmark; adding a bookmark requires us to re-play all of the previous bookmarks, but the lines to which they refer may have moved
+- Bookmarks are user scoped (should probably be project scoped?)
+- Currently no way to delete a bookmark
+
